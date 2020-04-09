@@ -17,12 +17,12 @@ class ListContacts extends Component{
   render(){
 
     const { query } = this.state
-    const { contact, onDeleteContact } = this.props
+    const { contacts, onDeleteContact } = this.props
 
     const showingContacts = query === ""
     ? contacts
     : contacts.filter((c)=>(
-      c.query.toLowerCase().includes(query.toLowerCase())
+      c.name.toLowerCase().includes(query.toLowerCase())
     ))
     return (
       <div className='list-contacts'>
